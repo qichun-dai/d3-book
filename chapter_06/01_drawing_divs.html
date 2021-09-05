@@ -10,7 +10,8 @@
 				display: inline-block;
 				width: 20px;
 				height: 75px;
-				background-color: teal;
+				background-color: rgb(158, 186, 197);
+				margin: 1px
 			}
 		
 		</style>
@@ -18,13 +19,21 @@
 	<body>
 		<script type="text/javascript">
 		
-			var dataset = [ 5, 10, 15, 20, 25 ];
+			var dataset = [];
+
+			for(var i = 1; i <= 27; i++){
+				anum = Math.floor(Math.random()*200);
+				dataset.push(anum);
+			}
 			
 			d3.select("body").selectAll("div")
-				.data(dataset)
-				.enter()
-				.append("div")
-				.attr("class", "bar");
+			.data(dataset)
+			.enter()
+			.append("div")
+			.attr("class","bar")
+			.style("height",function(d) {return d + "px";
+			});
+
 			
 		</script>
 	</body>

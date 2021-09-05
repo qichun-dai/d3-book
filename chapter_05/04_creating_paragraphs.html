@@ -14,7 +14,10 @@
 				.data(dataset)
 				.enter()
 				.append("p")
-				.text("New paragraph!");
+				.text(function(d) {return "I can do up to "+d+" push-ups";})
+				.style("color",function(c) {if(c>15) {
+					return "red";
+				}else {return "black";}});
 			
 		</script>
 	</body>
