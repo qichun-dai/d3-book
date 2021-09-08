@@ -27,7 +27,7 @@
 			//Set up stack method
 			var stack = d3.stack()
 						  .keys([ "apples", "oranges", "grapes" ])
-						  .order(d3.stackOrderDescending);  // <-- Flipped stacking order
+						  .order(d3.stackOrderAscending);  // <-- Flipped stacking order
 
 						  // Also try:
 						  // d3.stackOrderNone (the default, uses the order in which keys are specified)
@@ -51,7 +51,7 @@
 						return d.apples + d.oranges + d.grapes;
 					})
 				])
-				.range([0, h]);
+				.range([h, 0]);
 				
 			//Easy colors accessible via a 10-step ordinal scale
 			var colors = d3.scaleOrdinal(d3.schemeCategory10);
@@ -80,10 +80,10 @@
 					return xScale(i);
 				})
 				.attr("y", function(d) {
-					return yScale(d[0]);
+					return yScale(d[1]);
 				})
 				.attr("height", function(d) {
-					return yScale(d[1]) - yScale(d[0]);
+					return yScale(d[0]) - yScale(d[1]);
 				})
 				.attr("width", xScale.bandwidth());
 						

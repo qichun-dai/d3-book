@@ -89,7 +89,7 @@
 					svg.selectAll("rect")
 					   .data(dataset)
 					   .transition()
-					   .duration(1000)								// <-- Controlled duration, 1000ms = 1s
+					   .duration(100)								// <-- Controlled duration, 1000ms = 1s
 					   .attr("y", function(d) {
 					   		return h - yScale(d);
 					   })
@@ -112,6 +112,8 @@
 					   .attr("y", function(d) {
 					   		return h - yScale(d) + 14;
 					   });
+
+					
 					   				
 				});
 

@@ -122,8 +122,12 @@
 					   		return xScale(i) + xScale.bandwidth() / 2;
 					   })
 					   .attr("y", function(d) {
-					   		return h - yScale(d) + 14;
-					   });
+						   if(d<=1){return h - yScale(d)-2;}
+						   else{return h - yScale(d) + 14;}
+					   })
+					   .attr("fill",function(d) {
+						   if(d<=1){return "black";}
+						else{return "white"}});
 					   				
 				});
 

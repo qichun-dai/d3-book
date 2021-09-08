@@ -23,14 +23,12 @@
 							11, 12, 15, 20, 18, 17, 16, 18, 23, 25 ];
 			
 			d3.select("body").selectAll("div")
-				.data(dataset)
-				.enter()
-				.append("div")
-				.attr("class", "bar")
-				.style("height", function(d) {
-					var barHeight = d * 5;
-					return barHeight + "px";
-				});
+			.data(dataset)
+			.enter()
+			.append("div")
+			.attr("class","bar")
+			.style("height",function(d){return d+"px"})
+				;
 			
 		</script>
 	</body>

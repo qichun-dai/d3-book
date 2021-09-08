@@ -94,7 +94,9 @@
 					   .delay(function(d, i) {
 						   return i / dataset.length * 1000;
 					   })
-					   .duration(500)
+					   .duration(function(d, i) {
+						   return i / dataset.length * 1000;
+					   })
 					   .attr("y", function(d) {
 					   		return h - yScale(d);
 					   })

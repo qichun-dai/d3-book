@@ -129,13 +129,19 @@
 					//
 					//Exercise: Modify this code to add a new label each time a new bar is added!
 					//
-					svg.selectAll("text")
-					   .data(dataset)
+					var labelst = svg.selectAll("text")			//Select all bars
+						.data(dataset);	
+
+					labelst.enter()
+					   .append("text")
+					   .text(function(d){return d;})
+					   .attr("x",w)
+					   .attr("y",function(d){return h-yScale(d)+14;})
+					   .attr("fill","white")
+					   .attr("text-anchor", "middle")
+					   .merge(labelst)
 					   .transition()
 					   .duration(500)
-					   .text(function(d) {
-					   		return d;
-					   })
 					   .attr("x", function(d, i) {
 							return xScale(i) + xScale.bandwidth() / 2;
 					   })

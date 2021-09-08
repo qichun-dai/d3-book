@@ -249,10 +249,12 @@
 						//Update all paths and circles
 						svg.selectAll("path")
 							.transition()
+							.duration(2000)
 							.attr("d", path);
 
 						svg.selectAll("circle")
 							.transition()
+							.duration(2000)
 							.attr("cx", function(d) {
 								return projection([d.lon, d.lat])[0];
 							})
